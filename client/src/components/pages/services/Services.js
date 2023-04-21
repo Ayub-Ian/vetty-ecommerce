@@ -27,7 +27,17 @@ function Services() {
 
 
   return (
-    <div>Services</div>
+    <div>
+        <h2>Services</h2>
+    <ul>
+        {services.map(service => (
+          <li key={service.name}>{service.description} </li>
+
+
+        ))}
+      </ul>
+      </div>
+
   )
 }
 

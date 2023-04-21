@@ -1,36 +1,26 @@
-import React, { useEffect, useState } from 'react'
-import client from '../../../utils/network'
+import React, { useState, useEffect } from 'react';
+// import "../products/products.css";
+function Home() {
+  const [data, setData] = useState([]);
 
-function Products() {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
-    
-   
+  useEffect(() => {
+    // fetch data from API endpoint
+    fetch('http://127.0.0.1:3000/products')
+      .then(response => response.json())
+      .then(data => setData(data));
+  }, []);
 
-    // get request for all products
-    const getProducts = async () => {
-        setLoading(true)
-        try {
-            const response = await client.allProducts();
-            setProducts(response.data)
-        } catch (error) {
-            setError(JSON.stringify(error.response.data))
-        }
-        setLoading(false)
-    }
-    
-
-    useEffect(() => {
-        getProducts();
-    }, [])
-
-   
-    
   return (
-    <div>Products</div>
-  )
+    <div>
+      <h1>Home page</h1>
+      <ul>
+        {data.map(item => (
+          <li key={item.name}>{item.description} </li>
+
+        ))}
+      </ul>
+    </div>
+  );
 }
 
-export default Products
-
+export default Home;
