@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import client from '../../utils/network'
+import client from '../../../utils/network'
 
 function Services() {
     const [services, setServices] = useState([])
@@ -18,7 +18,7 @@ function Services() {
         setLoading(false)
     }
     
-
+ 
     useEffect(() => {
         getServices();
     }, [])

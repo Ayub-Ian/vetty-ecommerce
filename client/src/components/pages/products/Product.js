@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import client from '../../utils/network'
+import client from '../../../utils/network'
 
 function Products() {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
+    
+   
 
     // get request for all products
     const getProducts = async () => {
@@ -23,6 +25,7 @@ function Products() {
         getProducts();
     }, [])
 
+   
     
   return (
     <div>Products</div>
@@ -30,3 +33,4 @@ function Products() {
 }
 
 export default Products
+

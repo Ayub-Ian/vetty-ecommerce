@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_14_142749) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_19_085703) do
   create_table "product_orders", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_14_142749) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role", default: 0
   end
 
 end
