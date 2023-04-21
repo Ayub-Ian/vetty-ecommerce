@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import productsData from '../data/productsData';
+import productsData from '../../../utils/data/productsData';
+import Navbar from "../../navbar/Navbar";
 import "./Products.css";
 
 const Products = () => {
@@ -22,11 +23,14 @@ const Products = () => {
   });
 
   return (
-    <div className="products-container">
+    <div>
+      <Navbar />
+    <div className="products-container container">
       <div className="products-header">
         <h1>Products Page</h1>
       </div>
       <div className="products-grid">{products}</div>
+    </div>
     </div>
   );
 };
