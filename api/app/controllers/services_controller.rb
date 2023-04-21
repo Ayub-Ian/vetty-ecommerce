@@ -1,10 +1,10 @@
 class ServicesController < ApplicationController
-    # before_action :authenticate_admin! # Require admin authentication
+    before_action :authenticate_user
   
     # GET /admin/services
     def index
       @services = Service.all
-      render json: @services
+      render json: @services, status: :ok
     end
   
     # GET /admin/services/:id

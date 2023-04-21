@@ -12,6 +12,18 @@ gem 'pg'
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+# Use the has_secure_password for password protection and authentication
+gem "bcrypt"
+
+# Use JWT to build authentication
+gem 'jwt'
+
+# Use Pundit for authorization
+gem 'pundit'
+
+ # Use redis as storage for JWTSession token
+#  gem 'redis'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 

@@ -12,9 +12,9 @@ product3 = Product.create(name: 'Pet Grooming', price: 20.99)
 product4 = Product.create(name: 'Dog Vaccination', price: 15.99)
 
 # Create some example users
-user1 = User.create(name: 'John', email: 'john@gmail.com', password_digest: 'password')
-user2 = User.create(name: 'Alice', email: 'alicegmaille.com', password_digest: 'password')
-user3 = User.create(name: 'June', email: 'june@gmail.com', password_digest: 'password')
+user1 = User.create(name: 'John', email: 'john@gmail.com', password: 'password123')
+user2 = User.create(name: 'Alice', email: 'alicegmaille.com', password: 'password123')
+user3 = User.create(name: 'June', email: 'june@gmail.com', password: 'password123')
 
 #create some services
 service1 = Service.create(name: 'Fish Pellets', description: 'best fish pellets in town', price: 5.99)
