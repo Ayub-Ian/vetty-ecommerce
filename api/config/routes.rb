@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :services
   resources :products
   resources :users
+  resources :carts
 
   # ... other routes ...
 
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
     member do
       patch 'approve' # Route for approving a product order
       patch 'disapprove' # Route for disapproving a product order
+      post 'add_to_cart'
     end
   end
 end
