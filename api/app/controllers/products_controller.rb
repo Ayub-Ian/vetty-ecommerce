@@ -22,6 +22,13 @@ class ProductsController < ApplicationController
         render json: @product.errors, status: :unprocessable_entity
       end
     end
+
+    def add_to_cart
+      @product = Product.find(params[:id])
+      @product.add_to_cart(current_user)
+  
+      redirect_to cart_path
+    end
   
     # PUT /admin/products/:id
     def update
