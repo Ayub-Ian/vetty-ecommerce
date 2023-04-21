@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
 
 
     def signup
-        user = User.create(users_params)
+        user = User.create(user_params)
         if user.valid?
             render json: { data: user }, status: :created
         else
