@@ -60,116 +60,111 @@
 #   image_url:"https://cdn.pixabay.com/photo/2016/02/17/08/16/fish-food-1204648_960_720.jpg"
 
 # )
-puts "creating products"
-
-product1 = Product.create(name: 'Pet Grooming', 
-  price: 20.99, 
-  description: 'This includes acticities such as bathing, brushing, trimming, and styling the fur or coat of the animal, 
-  as well as nail trimming, 
-  ear cleaning, and sometimes dental care. ',
-  image_url: "https://images.pexels.com/photos/6816848/pexels-photo-6816848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-)
-
-product2 = Product.create(name: 'Chicken Vaccine',
-   price: 10.99, 
-   description: 'A vaccine is available for Fowlpox and is typically administered in the wing web of birds at 10 to 12 weeks of age. T
-   he vaccine exposes birds to a mild version of the active virus,
-    so birds should be completely healthy before the vaccine is administered 
-    to avoid complications.',
-   image_url:"https://images.pexels.com/photos/5726693/pexels-photo-5726693.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-
-
-  )
-product3 = Product.create(name: 'Pet Grooming', 
-  price: 20.99, 
-  description: 'This includes acticities such as bathing, brushing, trimming, and styling the fur or coat of the animal, 
-  as well as nail trimming, 
-  ear cleaning, and sometimes dental care. ',
-  image_url: "https://images.pexels.com/photos/6816848/pexels-photo-6816848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-)
-product4 = Product.create(name: 'Amerix', 
-  price: 20.99, 
-  description: 'This includes acticities such as bathing, brushing, trimming, and styling the fur or coat of the animal, 
-  as well as nail trimming, 
-  ear cleaning, and sometimes dental care. ',
-  image_url: "https://images.pexels.com/photos/6816848/pexels-photo-6816848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-)
-product5 = Product.create(name: 'Pet Grooming', 
-  price: 20.99, 
-  description: 'This includes acticities such as bathing, brushing, trimming, and styling the fur or coat of the animal, 
-  as well as nail trimming, 
-  ear cleaning, and sometimes dental care. ',
-  image_url: "https://images.pexels.com/photos/6816848/pexels-photo-6816848.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-)
-
-product6 = Product.create(name: 'Sudocrem',
-  price: 10.20, 
-  description: 'This can be used in dogs and cats in small amounts. Sudocrem contains zinc-oxide which is highly toxic to birds. Zinc-oxide is also toxic to dogs and cats if ingested in large quantities, but applying a thin layer of sudocrem to sore or irritated skin is generally safe and can be beneficial.',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRYJzUj-pKbxblSoJcCpKHAVsMshrGOV8D-A&usqp=CAU"
- )
- product7 = Product.create(name: 'Triatix',
-  price: 10.20, 
-  description: 'a highly effective ectoparaciticide used for the control of single and multi-host ticks, mange mites, keds, biting and sucking lice on cattle, sheep, goats, camels, pigs and dogs. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05Yn4n_loACUMHBFemzAEa2CIi7i-JC_rjA&usqp=CAU"
- )
- product8 = Product.create(name: 'Triatix',
-  price: 10.20, 
-  description: 'a highly effective ectoparaciticide used for the control of single and multi-host ticks, mange mites, keds, biting and sucking lice on cattle, sheep, goats, camels, pigs and dogs. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05Yn4n_loACUMHBFemzAEa2CIi7i-JC_rjA&usqp=CAU"
- )
- product9 = Product.create(name: 'Triatix',
-  price: 10.20, 
-  description: 'a highly effective ectoparaciticide used for the control of single and multi-host ticks, mange mites, keds, biting and sucking lice on cattle, sheep, goats, camels, pigs and dogs. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05Yn4n_loACUMHBFemzAEa2CIi7i-JC_rjA&usqp=CAU"
- )
- product10 = Product.create(name: 'Triatix', 
-  description: 'a highly effective ectoparaciticide used for the control of single and multi-host ticks, mange mites, keds, biting and sucking lice on cattle, sheep, goats, camels, pigs and dogs. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05Yn4n_loACUMHBFemzAEa2CIi7i-JC_rjA&usqp=CAU",
-  price: 10.20
- )
- product11 = Product.create(name: 'Triatix',
-
-  description: 'a highly effective ectoparaciticide used for the control of single and multi-host ticks, mange mites, keds, biting and sucking lice on cattle, sheep, goats, camels, pigs and dogs. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT05Yn4n_loACUMHBFemzAEa2CIi7i-JC_rjA&usqp=CAU",
-  price: 10.20
- )
- product12 = Product.create(name: 'Agrocal-ds',
-  description: 'The supplement is packed with all the essential nutrients and trace elements such as copper, calcium, zinc, manganese, iron, selenium, boron, etc. The offered Agrocal Gold Animal Supplement helps in increasing the productivity levels, growth speeds, and thereby increases the profit. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXmOB-xasRzfaAAu4ESZikTR-OZ-H9IAeU70ivlc65eJhj2uM0lq9s5BUAHKzMw_9Zpjo&usqp=CAU",
-  price: 10.20 
- )
- product13 = Product.create(name: 'Bioline hygiene ',
-  description: 'Improves the hygiene in the mouth; Natural and organic dental toothpaste; Used with finger or with dog toothbrush to clean teeth; ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6PLuhi1cFLJTY1PioWXIqIe7eSEU2H7TZ3A&usqp=CAU",
-  price: 12.20
- )
- product14 = Product.create(name: 'Chicken Jerky', 
-  description: 'from real chicken?meat. A great source of lean protein. No artificial colours, flavours or preservatives added. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDy0PnQuXjDjZ8Fk5cwz4ODT3Jf8rW36AscM0MMrd1RGoweozGs4TnXZDkdDJx1hvgQy8&usqp=CAU",
-  price: 8.20
- )
- product15 = Product.create(name: 'NexGard',
-  description: 'NexGard for dogs kills adult fleas before they lay eggs and kills ticks, too. All in a delicious, soft chew that dogs love. NexGard contains an ingredient, afoxolaner that helps treat and control fleas and ticks and keeps killing for a full 30 days per chewable tablet. ',
-  image_url:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ1ZfsDkLnP5-mVpQQsVzf06KJJWAnV0G_Gw&usqp=CAU",
-  price: 12.20
- )
-
-# product4 = Product.create(name: 'Dog Vaccination', 
-#   price: 15.99,
-#   description: 'best fish pellets in town',
-#   image_url: ''
-# )
-
 
 # Create some example users
 user1 = User.create(name: 'John', email: 'john@gmail.com', password_digest: 'password')
 user2 = User.create(name: 'Alice', email: 'alicegmaille.com', password_digest: 'password')
 user3 = User.create(name: 'June', email: 'june@gmail.com', password_digest: 'password')
 
+# Carts
+5.times do |i|
+  Cart.create(
+    user_id: i + 1
+  )
+end
+# Cart Items
+5.times do
+  CartItem.create(
+    quantity: rand(1..5),
+    cart_id: Cart.pluck(:id).sample,
+    product_id: rand(1..5),
+    service_id: rand(1..5)
+  )
+end
+# Orders
+5.times do |i|
+  Order.create(
+    status: ["pending", "completed"].sample,
+    total_price: rand(50..100),
+    user_id: i + 1
+  )
+end
+
+# Order Items
+5.times do
+  OrderItem.create(
+    quantity: rand(1..5),
+    order_id: Order.pluck(:id).sample,
+    product_id: rand(1..5),
+    service_id: rand(1..5)
+  )
+end
+
+
+puts "creating products"
+
+Service.create([
+  {
+  "name": "Red Velvet cake",
+  "description": "Red velvet cake has endured as one of the most popular cakes in the United States.Cake's name is a descriptor of its soft, velvety texture.",
+  "price": 20,
+  "image_url": "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVkJTIwdmVsdmV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+  "name": "Black Forest cake",
+  "description": "Typically, Black Forest cake is made by soaking the chocolate sponge in sugar syrup flavored with cherry brandy and topped with whipped cream.",
+  "price": 25,
+  "image_url": "https://media.istockphoto.com/id/1327824483/photo/image-of-sliced-black-forest-gateau-with-piped-whipped-cream-rosettes-with-morello-cherries.jpg?b=1&s=170667a&w=0&k=20&c=PeLWsfUyUe3mliVIV1tPvbQpQmC0u_pge8kp5eFeWro="
+  },
+  {
+  "name": "Cupcakes",
+  "description": "Cupcakes in general come in almost every flavor as traditional cakes, so you can customize your batch to your liking.",
+  "price": 5,
+  "image_url": "https://media.istockphoto.com/id/1324582711/photo/chocolate-and-vanilla-mini-desserts-cream-cupcakes-panacotas.jpg?b=1&s=170667a&w=0&k=20&c=p3_ZRRf1yXrZoslETdu4itmTgCWsgVvhJBF8UUe25GU="
+  },
+  {
+  "name": "Apricot Danish",
+  "description": "Apricot Danishes are easy and delicious! Chopped fresh apricots on a bed of sweetened cream cheese wrapped in buttery, crispy puff pastry.",
+  "price": 15,
+  "image_url": "https://media.istockphoto.com/id/1399448503/photo/apricot-danish-pastries-on-a-white-napkin-the-cakes-are-served-in-a-tall-glass-vase-close-up.jpg?b=1&s=170667a&w=0&k=20&c=xRsdf3iC_4iOtg4Vf3XT33HSZjIc14hmnNx6XM43GFU="
+  },
+  {
+  "name": "Chocolate tarts",
+  "description": "Get ready to swoon! These rich and indulgent chocolate tarts are filled with two types of chocolate.",
+  "price": 15,
+  "image_url": "https://media.istockphoto.com/id/480134303/photo/chocolate-tart.jpg?b=1&s=170667a&w=0&k=20&c=kT0ucWQBDGmxFMRvhMAQsv6l5jDUORazN8BQN3CUUGQ="
+  },
+  {
+  "name": "Baklava",
+  "description": "Layer with nuts and drizzle with honey to make this wonderfully sticky Middle Eastern treat.",
+  "price": 10,
+  "image_url": "https://media.istockphoto.com/id/1367685040/photo/traditional-turkish-arabic-sweets-baklava-with-turkish-coffee.jpg?b=1&s=170667a&w=0&k=20&c=WDv2EjogNxFU3I3dt22BS9P3X2Q-rUBYZl4Sbxb_KCM="
+  },
+  {
+  "name": "White Chocolate Strawberry Cookies",
+  "description": "These cookies bring together two favorite ingredients: white chocolate and strawberry. They are perfectly sweet and chewy with fun bites of dried strawberry pieces and white chocolate chips.",
+  "price": 5,
+  "image_url": "https://images.unsplash.com/photo-1621236378699-8597faf6a176?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8V2hpdGUlMjBDaG9jb2xhdGUlMjBTdHJhd2JlcnJ5JTIwQ29va2llc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+  },
+  {
+  "name": "Chocolate Chip Cookies",
+  "description": "You cannot go wrong with the classic chocolate chip cookie. This recipe includes melted butter, more brown sugar than white sugar, and an extra egg yolk for a chewy texture and big chocolate chunks for indulgent flavor.",
+  "price": 5,
+  "image_url": "https://media.istockphoto.com/id/1367685040/photo/traditional-turkish-arabic-sweets-baklava-with-turkish-coffee.jpg?b=1&s=170667a&w=0&k=20&c=WDv2EjogNxFU3I3dt22BS9P3X2Q-rUBYZl4Sbxb_KCM="
+  },
+  {
+  "name": "Gingerbread Cookies",
+  "description": "They are the quintessential Christmas cookie, but gingerbread cookies are delicious anytime. With tasty warming spices, including ginger, cinnamon, ginger, and cloves, they are simply delicious and make your house smell amazing.",
+  "price": 5,
+  "image_url": "https://plus.unsplash.com/premium_photo-1669831178183-44b4829039d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2luZ2VyYnJlYWQlMjBjb29raWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  }
+  ])
+
+
 #create some services
-Service.create(name: 'Fish Pellets', description: 'Best fish pellets in town', price: 5.99, image_url: 'http://africanmiliki.com/images/Irio.jpg')
-Service.create(name: 'Dog Grooming', description: 'Professional dog grooming services', price: 45.99, image_url: 'http://africanmiliki.com/images/DogGrooming.jpg')
-Service.create(name: 'Cat Boarding', description: 'Safe and comfortable cat boarding', price: 30.99, image_url: 'http://africanmiliki.com/images/CatBoarding.jpg')
+# Service.create(name: 'Fish Pellets', description: 'Best fish pellets in town', price: 5.99, image_url: 'http://africanmiliki.com/images/Irio.jpg')
+# Service.create(name: 'Dog Grooming', description: 'Professional dog grooming services', price: 45.99, image_url: 'http://africanmiliki.com/images/DogGrooming.jpg')
+# Service.create(name: 'Cat Boarding', description: 'Safe and comfortable cat boarding', price: 30.99, image_url: 'http://africanmiliki.com/images/CatBoarding.jpg')
 
  #Create some sample product orders
 

@@ -5,7 +5,7 @@ function Home() {
 
   useEffect(() => {
     // fetch data from API endpoint
-    fetch('http://127.0.0.1:3000/products')
+    fetch('http://127.0.0.1:3000/services')
       .then(response => response.json())
       .then(data => setData(data));
   }, []);

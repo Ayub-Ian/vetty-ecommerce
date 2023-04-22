@@ -1,44 +1,41 @@
-import React, { useEffect, useState } from 'react'
-import client from '../../../utils/network'
+import React, { useState, useEffect } from 'react';
 
-function Services() {
-    const [services, setServices] = useState([])
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
+function Service() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    // GET request for all services
-    const getServices = async () => {
-        setLoading(true)
-        try {
-            const response = await client.allServices();
-            setServices(response.data)
-        } catch (error) {
-            setError(JSON.stringify(error.response.data))
-        }
-        setLoading(false)
-    }
-    
- 
-    useEffect(() => {
-        getServices();
-    }, [])
+  useEffect(() => {
+    // fetch data from API endpoint
+    fetch('http://127.0.0.1:3000/services')
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      });
+  }, []);
 
-    
-
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <div>
-        <h2>Services</h2>
-    <ul>
-        {services.map(service => (
-          <li key={service.name}>{service.description} </li>
-
-
+    
+        {Array.isArray(data) && data.map((service) => (
+          <div className="col-lg-4 col-md-6 mb-4" key={service.id}>
+             <div class="card">
+    <img class="card-img-top" src={service.image_url} alt="product img" />
+    <div class="card-body">
+      <h5 class="card-title">{service.name}</h5>
+      <p class="card-text">{service.description}</p>
+      <p class="card-text">${service.price}</p>
+    </div>
+  </div>
+          </div>
         ))}
-      </ul>
-      </div>
-
-  )
+      
+    </div>
+  );
 }
 
-export default Services
+export default Service;
