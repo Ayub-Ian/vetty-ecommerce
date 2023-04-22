@@ -7,6 +7,8 @@ import LoginPage from './components/pages/auth/LoginPage'
 import RegisterPage from './components/pages/auth/RegisterPage'
 import ForgetPasswordPage from './components/pages/auth/ForgetPasswordPage'
 import HomePage from './components/pages/homepage/HomePage'
+import Billing from './components/Billing/Billing';
+ import Cart from './components/pages/products/Cart';
 
 
 function App() {
@@ -17,7 +19,10 @@ function App() {
       <Routes>
         {/* Add your routes here */}
             <Route path="/" element={<LandingPage />} />
+            <Route path="/billing" element={<Billing/>}/>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/cart" element={<Cart/>}/>
+
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/forget-password" element={<ForgetPasswordPage />} />
             <Route path="/home" element={<HomePage />} />

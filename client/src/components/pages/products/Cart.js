@@ -1,34 +1,83 @@
-import { useParams } from "react-router-dom";
-import UseFetch from "./UseFetch";
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+// import './Cart.css';
 
 const Cart = () => {
-    const { id } = useParams()
-    const {data: product, loading} = UseFetch("http://localhost:3000/" + id)
+  const [cartItems, setCartItems] = useState([]);
 
-    console.log(product.id)
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem('cartItems')) || [];
+    setCartItems(items.map(item => ({ ...item, quantity: 1 })));
+  }, []);
 
-    return ( 
-        <>
-            <div>
-                {loading && <h3>Loading data...</h3>}
-                {product.product_items && product.product_items.map((product_item) => (
-                    <div key={product_item.id} className='md:mr-6 my-6 bg-green-100 p-2 rounded-lg'>
-                        <div className="w-full">
-                            <img className="rounded-xl " src={product_item.image_url} alt="" />
-                        </div>
-                        <div className="py-2 px-3">
-                            <h3 className="text-gray-700 md:text-xl text-lg font-semibold">{product_item.name}</h3>
-                            <p className="my-1">{product_item.description.split(/\s+/).slice(0, 16).join(" ")}</p>
-                            <h4 className="text-green-500 font-medium">Ksh {product_item.price}</h4>
-                            <div className="my-4 flex justify-between">
-                                
-                            </div>
-                        </div>
-                    </div>
-                ))}
+  const handleRemoveFromCart = (product) => {
+    const newCartItems = cartItems.filter((item) => item.id !== product.id);
+    setCartItems(newCartItems);
+    localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+  };
+
+  const handleAddToCart = (product) => {
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === product.id) {
+        return { ...item, quantity: item.quantity + 1 };
+      }
+      return item;
+    });
+    setCartItems(updatedCartItems);
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  };
+
+  const handleReduceFromCart = (product) => {
+    const updatedCartItems = cartItems.map((item) => {
+      if (item.id === product.id) {
+        return { ...item, quantity: item.quantity - 1 };
+      }
+      return item;
+    });
+    setCartItems(updatedCartItems);
+    localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
+  };
+
+  const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
+
+  const handleCheckout = () => {
+    // Navigate to the billing page with the price as a query parameter
+    window.location.href = `/billing?price=${totalPrice}`;
+  };
+
+  return (
+    <div className="cart-container">
+      <h1 className="cart-title">Cart</h1>
+      {cartItems.length === 0 ? (
+        <p className="cart-empty-message">Your cart is empty</p>
+      ) : (
+        <div>
+          {cartItems.map((item) => (
+            <div className="cart-item" key={item.id}>
+              <img src={item.image_url} alt={item.name} className="cart-item-image" />
+              <div className="cart-item-details">
+                <h2 className="cart-item-name">{item.name}</h2>
+                <p className="cart-item-price">${item.price}</p>
+                <div className="cart-item-quantity">
+                  <button className="cart-quantity-button" onClick={() => handleReduceFromCart(item)}>-</button>
+                  <span>{item.quantity}</span>
+                  <button className="cart-quantity-button" onClick={() => handleAddToCart(item)}>+</button>
+                </div>
+              </div>
+              <button className="cart-remove-button" onClick={() => handleRemoveFromCart(item)}>Remove</button>
             </div>
-        </>
-     );
-}
- 
+          ))}
+          <p className="cart-total-price">Total: ${totalPrice}</p>
+          <button className="cart-checkout-button" onClick={handleCheckout}>Checkout</button>
+        </div>
+      )}
+      <button className="check-out">
+            <Link to="/Billing" >Checkout</Link><br></br>
+           </button> 
+
+      <Link to="/home" className="back-button">Back to Home</Link>
+    </div>
+  );
+};
+
 export default Cart;

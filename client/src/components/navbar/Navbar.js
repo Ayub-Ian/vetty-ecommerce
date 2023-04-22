@@ -39,9 +39,10 @@ const Navbar = () => {
                 <button onClick={handleLogout}>Logout</button>
             </div>
           </div>
-          <Link>
+          <Link to="/Cart">
             <ShoppingBagIcon className="hero-icon" />
             Cart
+
           </Link>
         </div>
       </div>
