@@ -429,5 +429,162 @@ h1 {
   .btn-primary {
     background-color: grey;
   }
+  .cart-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .cart-card {
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 20px;
+  }
+  
+  .cart-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .cart-empty-message {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .cart-item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .cart-item-details {
+    flex-grow: 1;
+  }
+  
+  .cart-item-name {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item-price {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cart-quantity-button {
+    font-size: 1.2rem;
+    background-color: #ddd;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .cart-remove-button {
+    font-size: 1rem;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .cart-total-price {
+    font-size: 1.2rem;
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .cart-checkout-button {
+    font-size: 1rem;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  .back-to-home {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .back-to-home:hover {
+    background-color: #0056b3;
+  }
+
+  .card {
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 5px;
+}
+
+.card-title {
+  font-size: 1.25rem;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background: #D9D9D9;
+
+}
+/* .parent-container {
+  /* display: flex; */
+  
+
+ 
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+}
+
+body {
+  background-color: #EDEDED;
+}
+.btn-primary {
+  background-color: grey;
+}
   
   

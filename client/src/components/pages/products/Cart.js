@@ -10,15 +10,15 @@ const Cart = () => {
     setCartItems(items.map(item => ({ ...item, quantity: 1 })));
   }, []);
 
-  const handleRemoveFromCart = (product) => {
-    const newCartItems = cartItems.filter((item) => item.id !== product.id);
+  const handleRemoveFromCart = (service) => {
+    const newCartItems = cartItems.filter((item) => item.id !== service.id);
     setCartItems(newCartItems);
     localStorage.setItem('cartItems', JSON.stringify(newCartItems));
   };
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = (service) => {
     const updatedCartItems = cartItems.map((item) => {
-      if (item.id === product.id) {
+      if (item.id === service.id) {
         return { ...item, quantity: item.quantity + 1 };
       }
       return item;
@@ -27,9 +27,9 @@ const Cart = () => {
     localStorage.setItem('cartItems', JSON.stringify(updatedCartItems));
   };
 
-  const handleReduceFromCart = (product) => {
+  const handleReduceFromCart = (service) => {
     const updatedCartItems = cartItems.map((item) => {
-      if (item.id === product.id) {
+      if (item.id === service.id) {
         return { ...item, quantity: item.quantity - 1 };
       }
       return item;
@@ -72,8 +72,8 @@ const Cart = () => {
         </div>
       )}
       <button className="check-out">
-            <Link to="/Billing" >Checkout</Link><br></br>
-           </button> 
+        <Link to="/Billing" >Checkout</Link><br></br>
+      </button> 
 
       <Link to="/home" className="back-button">Back to Home</Link>
     </div>

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Rating from 'react-rating';
 
 function Service() {
   const [data, setData] = useState([]);
@@ -17,7 +19,18 @@ function Service() {
   if (loading) {
     return <h2>Loading...</h2>;
   }
-
+  const handleAddToCart = (product) => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const newCartItem = {
+      ...product,
+      rating: 0,
+    };
+    cartItems.push(newCartItem);
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    const cartCount = cartItems.length;
+    localStorage.setItem('cartCount', cartCount);
+  };
+  
   return (
     <div>
     
@@ -29,12 +42,28 @@ function Service() {
       <h5 class="card-title">{service.name}</h5>
       <p class="card-text">{service.description}</p>
       <p class="card-text">${service.price}</p>
+      <Rating
+  initialRating={service.rating}
+  emptySymbol="fa fa-star-o fa-lg"
+  fullSymbol="fa fa-star fa-lg"
+  onClick={(value) => {
+    service.rating = value;
+    localStorage.setItem('cartItems', JSON.stringify(service));
+  }}
+/>
     </div>
   </div>
+  <div className="text-center">
+  <button className="btn btn-primary" onClick={() => handleAddToCart(service)}>Add to Cart</button>
+
+        <Link to="/cart">
+          <button className="btn btn-primary">View Cart</button>
+        </Link>
+      </div>
           </div>
         ))}
-      
     </div>
+
   );
 }
 
