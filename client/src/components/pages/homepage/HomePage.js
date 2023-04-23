@@ -16,7 +16,7 @@ export default function HomePage() {
           <div className="hero--cta-l">
           <h1>We are always here for your pet's good health</h1>
           <div className="button--cta">
-          <Link to="/products" className="shop--cta">Shop now</Link>
+          <Link to="/services" className="shop--cta">Shop now</Link>
           <Link to="/services" className="service--cta">Get a service</Link>
           </div>
           </div>
@@ -36,21 +36,21 @@ export default function HomePage() {
             <div className="home--service-card">
                 <div className="home--service-cta">
                 <p>Medical</p>
-                <Link>Get service</Link>
+                <Link to="/services">Get service</Link>
                 </div>
                 <img src={medical_paw} alt="medical paw" />
             </div>
             <div className="home--service-card">
                 <div className="home--service-cta">
                 <p>Pet care</p>
-                <Link to="/order-service/petcare">Get service</Link>
+                <Link to="/services">Get service</Link>
                 </div>
                 <img src={pet_care} alt="medical paw" />
             </div>
             <div className="home--service-card">
                 <div className="home--service-cta">
                 <p>Training</p>
-                <Link>Get service</Link>
+                <Link to="/services">Get service</Link>
                 </div>
                 <img src={pet_belt} alt="medical paw" />
             </div>
