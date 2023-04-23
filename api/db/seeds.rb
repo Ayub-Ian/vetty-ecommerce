@@ -5,61 +5,7 @@
 # #
 # #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 # #   Character.create(name: "Luke", movie: movies.first)
-# # Create some example products
-# product1 = Product.create(name: 'Fish Pellets', price: 5.99)
-# product2 = Product.create(name: 'Chicken Vaccine', price: 10.99)
-# product3 = Product.create(name: 'Pet Grooming', price: 20.99)
-# product4 = Product.create(name: 'Dog Vaccination', price: 15.99)
 
-# # Create some example users
-# user1 = User.create(name: 'John', email: 'john@gmail.com', password: 'password123')
-# user2 = User.create(name: 'Alice', email: 'alicegmaille.com', password: 'password123')
-# user3 = User.create(name: 'June', email: 'june@gmail.com', password: 'password123')
-
-# #create some services
-# service1 = Service.create(name: 'Fish Pellets', description: 'best fish pellets in town', price: 5.99)
-# service2 = Service.create(name: 'Chicken Vaccine', description: 'vaccinate your chicken now', price: 10.99)
-# service3 = Service.create(name: 'Pet Grooming', description: 'Dont we all like a clean buddy',price: 20.99)
-# service4 = Service.create(name: 'Dog Vaccination',description: 'all dog vaccination against rabbies', price: 15.99)
-
-# # Create some sample product orders
-
-# product_order1 = ProductOrder.create(user: user1, user_id: 40, product: product1, quantity: 2, status: "pending")
-
-# product_order2 = ProductOrder.create(user: user2, user_id: 41,product: product2, quantity: 1, status: "approved")
-
-# product_order3 = ProductOrder.create(user: user3, user_id: 42,product: product3, quantity: 3, status: "completed")
-
-# puts "Seed data for orders created successfully!"
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-# Create some example products
-# 10.times do
-#   Product.create(
-#     name: Faker::Creature::Animal.name, # Generate a fake animal name
-#     description: Faker::Lorem.sentence, # Generate a fake description
-#     price: Faker::Commerce.price(range: 1..100.0), # Generate a fake price between 1 and 100
-#     image_url: Faker::Placeholdit.image(size: '300x300', format: 'jpg'), # Generate a fake image URL
-#   )
-# end
-
-
-# product1 = Product.create(name: 'Fish Pellets', 
-#   price: 5.99, 
-#   description: '
-#   Manufactured feeds are an important part 
-#   of modern commercial aquaculture, providing the balanced 
-#   nutrition needed by farmed fish. The feeds, in the form of 
-#   granules or pellets, provide the nutrition in a stable and concentrated form,
-#   enabling the fish to feed efficiently and grow to their full potential.',
-#   image_url:"https://cdn.pixabay.com/photo/2016/02/17/08/16/fish-food-1204648_960_720.jpg"
-
-# )
 
 # Create some example users
 user1 = User.create(name: 'John', email: 'john@gmail.com', password_digest: 'password')
@@ -101,63 +47,40 @@ end
 end
 
 
-puts "creating products"
+puts "creating services"
 
+# service1= service.create(name: "Dog walking and exercise service", description: "This service enables the dog to exercise moreand stretch itself even more", price:$13, image_url: "https://wag-club.co.uk/img/benefits_dog_walking.jpg")
+# service2= service.create(name: "Pet Adoption  Services", description: "Pet adoption is the process of transferring responsibility for a pet that was previously owned by another party such as a person, shelter, or rescue ..." , price:$20, image_url: "https://agrilinks.org/sites/default/files/styles/featured/public/screen_shot_2019-11-26_at_12.42.15.png")
+# service3= service.create(name: "Animal tagging services service", description: "using a means of marking is a process done to identify and track specific animals. It is done for a variety of reasons including verification of ownership, biosecurity control, and tracking for research or agricultural purposes.", price:$50, image_url: "https://d27p2a3djqwgnt.cloudfront.net/wp-content/uploads/2017/01/11144732/cows-1209635_1280.jpg")
+# service4= service.create(name: "Dental Care services service", description: "Veterinary dentistry includes the cleaning, adjustment, filing, extraction, or repair of your pets' teeth and all other aspects of oral health care. These procedures should be performed by a veterinarian or a board-certified veterinary dentist.", price:$30, image_url: "https://thenoblevet.com/wp-content/uploads/2020/12/The-Noble-Veterinary-Surgeons-Pet-Dentistry.jpg.webp")
+# service5= service.create(name: "Animal microchipping services service", description: "Microchips provide an effective, permanent, and reliable means of identifying your animal. Microchips implanted by Animal Services are automatically registered in a national microchip database. It is important, however, that pet owners ensure their information is updated if they move or change phone numbers.", price:$40 image_url: "https://www.msah.com/sites/default/files/Microchip.jpeg")
+  #service1= service.create(name: Dental Care services service description: "", prMicrochips provide an effective, permanent, and reliable means of identifying your animal. Microchips implanted by Animal Services are automatically registered in a national microchip database. It is important, however, that pet owners ensure their information is updated if they move or change phone numbers.ice:"" image_url: "https://thenoblevet.com/wp-content/uploads/2020/12/The-Noble-Veterinary-Surgeons-Pet-Dentistry.jpg.webp"
 Service.create([
   {
-  "name": "Red Velvet cake",
+  "name": "Dog Exercise and training",
   "description": "Red velvet cake has endured as one of the most popular cakes in the United States.Cake's name is a descriptor of its soft, velvety texture.",
   "price": 20,
-  "image_url": "https://images.unsplash.com/photo-1586788680434-30d324b2d46f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVkJTIwdmVsdmV0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+  "image_url": "https://www.dogtopia.com/olathe/wp-content/themes/dogtopia-local-2018/dist/images/training-service-page-body-copy-image.jpg"
   },
   {
-  "name": "Black Forest cake",
-  "description": "Typically, Black Forest cake is made by soaking the chocolate sponge in sugar syrup flavored with cherry brandy and topped with whipped cream.",
+  "name": "Animal Tagging",
+  "description": "using a means of marking is a process done to identify and track specific animals. It is done for a variety of reasons including verification of ownership, biosecurity control, and tracking for research or agricultural purposes",
   "price": 25,
-  "image_url": "https://media.istockphoto.com/id/1327824483/photo/image-of-sliced-black-forest-gateau-with-piped-whipped-cream-rosettes-with-morello-cherries.jpg?b=1&s=170667a&w=0&k=20&c=PeLWsfUyUe3mliVIV1tPvbQpQmC0u_pge8kp5eFeWro="
+  "image_url": "https://blog.apnikheti.com/wp-content/uploads/2019/04/New-Project-20.jpg"
   },
   {
-  "name": "Cupcakes",
-  "description": "Cupcakes in general come in almost every flavor as traditional cakes, so you can customize your batch to your liking.",
+  "name": "Dental care services",
+  "description": "Veterinary dentistry includes the cleaning, adjustment, filing, extraction, or repair of your pets' teeth and all other aspects of oral health care. These procedures should be performed by a veterinarian or a board-certified veterinary dentist",
   "price": 5,
-  "image_url": "https://media.istockphoto.com/id/1324582711/photo/chocolate-and-vanilla-mini-desserts-cream-cupcakes-panacotas.jpg?b=1&s=170667a&w=0&k=20&c=p3_ZRRf1yXrZoslETdu4itmTgCWsgVvhJBF8UUe25GU="
+  "image_url": "https://thenoblevet.com/wp-content/uploads/2020/12/The-Noble-Veterinary-Surgeons-Pet-Dentistry.jpg.webp"
   },
   {
-  "name": "Apricot Danish",
-  "description": "Apricot Danishes are easy and delicious! Chopped fresh apricots on a bed of sweetened cream cheese wrapped in buttery, crispy puff pastry.",
+  "name": "Microchippping",
+  "description": "Microchips provide an effective, permanent, and reliable means of identifying your animal. Microchips implanted by Animal Services are automatically registered in a national microchip database. It is important, however, that pet owners ensure their information is updated if they move or change phone numbers",
   "price": 15,
-  "image_url": "https://media.istockphoto.com/id/1399448503/photo/apricot-danish-pastries-on-a-white-napkin-the-cakes-are-served-in-a-tall-glass-vase-close-up.jpg?b=1&s=170667a&w=0&k=20&c=xRsdf3iC_4iOtg4Vf3XT33HSZjIc14hmnNx6XM43GFU="
+  "image_url": "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2021/02/14165945/Cavalier-King-Charles-Spaniel-lying-down-getting-a-microchip-scan-on-a-white-background.jpg"
   },
-  {
-  "name": "Chocolate tarts",
-  "description": "Get ready to swoon! These rich and indulgent chocolate tarts are filled with two types of chocolate.",
-  "price": 15,
-  "image_url": "https://media.istockphoto.com/id/480134303/photo/chocolate-tart.jpg?b=1&s=170667a&w=0&k=20&c=kT0ucWQBDGmxFMRvhMAQsv6l5jDUORazN8BQN3CUUGQ="
-  },
-  {
-  "name": "Baklava",
-  "description": "Layer with nuts and drizzle with honey to make this wonderfully sticky Middle Eastern treat.",
-  "price": 10,
-  "image_url": "https://media.istockphoto.com/id/1367685040/photo/traditional-turkish-arabic-sweets-baklava-with-turkish-coffee.jpg?b=1&s=170667a&w=0&k=20&c=WDv2EjogNxFU3I3dt22BS9P3X2Q-rUBYZl4Sbxb_KCM="
-  },
-  {
-  "name": "White Chocolate Strawberry Cookies",
-  "description": "These cookies bring together two favorite ingredients: white chocolate and strawberry. They are perfectly sweet and chewy with fun bites of dried strawberry pieces and white chocolate chips.",
-  "price": 5,
-  "image_url": "https://images.unsplash.com/photo-1621236378699-8597faf6a176?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8V2hpdGUlMjBDaG9jb2xhdGUlMjBTdHJhd2JlcnJ5JTIwQ29va2llc3xlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-  },
-  {
-  "name": "Chocolate Chip Cookies",
-  "description": "You cannot go wrong with the classic chocolate chip cookie. This recipe includes melted butter, more brown sugar than white sugar, and an extra egg yolk for a chewy texture and big chocolate chunks for indulgent flavor.",
-  "price": 5,
-  "image_url": "https://media.istockphoto.com/id/1367685040/photo/traditional-turkish-arabic-sweets-baklava-with-turkish-coffee.jpg?b=1&s=170667a&w=0&k=20&c=WDv2EjogNxFU3I3dt22BS9P3X2Q-rUBYZl4Sbxb_KCM="
-  },
-  {
-  "name": "Gingerbread Cookies",
-  "description": "They are the quintessential Christmas cookie, but gingerbread cookies are delicious anytime. With tasty warming spices, including ginger, cinnamon, ginger, and cloves, they are simply delicious and make your house smell amazing.",
-  "price": 5,
-  "image_url": "https://plus.unsplash.com/premium_photo-1669831178183-44b4829039d5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z2luZ2VyYnJlYWQlMjBjb29raWVzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-  }
+  
   ])
 
 

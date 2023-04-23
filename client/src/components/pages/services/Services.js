@@ -36,12 +36,12 @@ function Service() {
     
         {Array.isArray(data) && data.map((service) => (
           <div className="col-lg-4 col-md-6 mb-4" key={service.id}>
-             <div class="card">
-    <img class="card-img-top" src={service.image_url} alt="product img" />
+             <div class="disp-service">
+    <img class="item-1" src={service.image_url} alt="service img" />
     <div class="card-body">
-      <h5 class="card-title">{service.name}</h5>
-      <p class="card-text">{service.description}</p>
-      <p class="card-text">${service.price}</p>
+      <h5 class="item-2">{service.name}</h5>
+      <p class="item-3">{service.description}</p>
+      <p class="item-4">${service.price}</p>
       <Rating
   initialRating={service.rating}
   emptySymbol="fa fa-star-o fa-lg"
