@@ -174,4 +174,15 @@ Service.create([
 
 # product_order3 = ProductOrder.create(user_id: user3.id,product_id: product3.id, quantity: 3, status: "completed")
 
+# db/seeds.rb
+# 3.times do
+#   Product.create!(
+#     name: Faker::Commerce.product_name,
+#     description: Faker::Lorem.sentence,
+#     price: Faker::Commerce.price,
+#     status: 'approved'
+#   )
+# end
+
+
 puts "Seed data for orders created successfully!"
