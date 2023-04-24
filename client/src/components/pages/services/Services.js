@@ -1,84 +1,71 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Rating from "react-rating";
 
-function Services() {
-  const [services, setServices] = useState([]);
+function Service() {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://127.0.0.1:3000/services/services')
-      .then(response => response.json())
-      .then(data => setServices(data));
+    // fetch data from API endpoint
+    fetch("http://127.0.0.1:3000/services")
+      .then((response) => response.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      });
   }, []);
 
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  const handleAddToCart = (product) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const newCartItem = {
+      ...product,
+      rating: 0,
+    };
+    cartItems.push(newCartItem);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    const cartCount = cartItems.length;
+    localStorage.setItem("cartCount", cartCount);
+  };
+
   return (
-    <div>
-      <h2>Services</h2>
-      <p>This is my services file</p>
-      <ul>
-        {services.map(service => (
-          <li key={service.id}>
-            <h3>{service.name}</h3>
-            <p>{service.description}</p>
-            <p>Price: ${service.price}</p>
-          </li>
+    <div className="row">
+      {Array.isArray(data) &&
+        data.map((service) => (
+          <div className="col-lg-3 col-md-6 mb-4" key={service.id}>
+            <div className="card" style={{ width: "18rem" }}>
+              <img className="card-img-top" src={service.image_url} alt="service img" />
+              <div className="card-body">
+                <h5 className="card-title">{service.name}</h5>
+                <p className="card-text">${service.price}</p>
+                <Rating
+                  initialRating={service.rating}
+                  emptySymbol="fa fa-star-o fa-lg"
+                  fullSymbol="fa fa-star fa-lg"
+                  onClick={(value) => {
+                    service.rating = value;
+                    localStorage.setItem("cartItems", JSON.stringify(service));
+                  }}
+                />
+                <p className="card-text">{service.description}~</p>
+                <button className="btn btn-primary" onClick={() => handleAddToCart(service)}>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
         ))}
-      </ul>
+      <div className="col-lg-12">
+        <Link to="/cart">
+          <button className="btn btn-primary">View Cart</button>
+        </Link>
+      </div>
     </div>
   );
 }
 
-export default Services;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, { useState, useEffect } from 'react';
-// import { Link } from 'react-router-dom';
-// import './Services.css';
-
-// function Services() {
-//   const [services, setServices] = useState([]);
-
-//   useEffect(() => {
-//     fetch('/services')
-//       .then(response => response.json())
-//       .then(data => setServices(data));
-//   }, []);
-
-//   const serviceItems = services.map(service => {
-//     return (
-//       <div key={service.id} className="service">
-//         <h3>
-//           <Link to={`/services/${service.id}`}>{service.name}</Link>
-//         </h3>
-//         <p>{service.description}</p>
-//         <p>Price: ${service.price}</p>
-//         <hr />
-//       </div>
-//     );
-//   });
-
-//   return (
-//     <div className="services-container">
-//       <div className="services-header">
-//         <h1>Services Page</h1>
-//       </div>
-//       <div className="services-grid">{serviceItems}</div>
-//     </div>
-//   );
-// }
-
-// export default Services;
+export default Service;

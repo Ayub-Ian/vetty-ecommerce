@@ -297,3 +297,11 @@ code {
     width: 1170px;
   }
 }
+
+
+.pets{
+display: grid;
+/* justify-self: center; */
+ grid-template-columns: repeat(auto-fit, minimax(300px,1fr));
+
+}

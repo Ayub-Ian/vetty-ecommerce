@@ -12,6 +12,8 @@ import hero_dog from "../../../assets/hero-dog.png";
 
 export default function HomePage({ isLoggedIn }) {
 const [products, setProducts] = useState([]);
+const [product, setProduct] = useState([]);
+
 const [services, setServices] = useState([]);
 const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -29,8 +31,8 @@ fetch('/api/services')
   .catch(error => console.log(error));
 // }, []);
 
-const filteredProducts = selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory);
-const uniqueCategories = [...new Set(products.map(product => product.category))];
+const filteredProducts = selectedCategory === 'all' ? products : products.filter(products=> products.category === selectedCategory);
+const uniqueCategories = [...new Set(products.map(products => products.category))];
 
 return (
 <>
