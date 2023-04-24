@@ -28,6 +28,9 @@ const Navbar = () => {
           <li>
             <NavLink to="/products">Shop</NavLink>
           </li>
+          <li>
+          <NavLink to="/admin">Admin</NavLink>
+          </li>
         </ul>
         <div className="navbar--action">
           <div className="navbar--account">

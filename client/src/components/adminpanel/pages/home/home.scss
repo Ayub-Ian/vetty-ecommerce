@@ -1,0 +1,50 @@
+.home {
+    display: flex;
+    .homeContainer {
+        flex: 6;
+
+        .widgets, .chart {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .charts {
+            display: flex;
+            padding: 5px 20px;
+        }
+    }
+}
+
+.home {
+    display: flex;
+  
+    .sidebar {
+      flex: 1;
+      background-color: #f5f5f5;
+      padding: 20px;
+      box-sizing: border-box;
+      position: fixed;
+      height: 100%;
+    }
+  
+    .homeContainer {
+      flex: 6;
+      margin-left: 250px;
+      padding: 20px;
+      background-color: #f5f5f5;
+  
+      .widgets,
+      .charts {
+        display: flex;
+        padding: 20px;
+        gap: 20px;
+      }
+  
+      .charts {
+        display: flex;
+        padding: 5px 20px;
+      }
+    }
+  }
+  
