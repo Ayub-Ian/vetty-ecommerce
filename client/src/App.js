@@ -88,19 +88,23 @@ export default App;*/
 
 
 import React from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Products from "./components/products/Products";
 import ProductDetail from './components/products/ProductDetails'
 import Cart from './components/cart/Cart'
 import './App.css';
-import Services from './components/pages/services/Services';
 import LandingPage from './components/pages/landing-page/LandingPage'
 import LoginPage from './components/pages/auth/LoginPage'
 import RegisterPage from './components/pages/auth/RegisterPage'
 import ForgetPasswordPage from './components/pages/auth/ForgetPasswordPage'
 import HomePage from './components/pages/homepage/HomePage'
 import AdminHome from './components/adminpanel/pages/home/Home';
-import Login from './components/adminpanel/pages/login/Login'
+import ProductForm from './components/adminpanel/form/ProductForm'
+import Orders from './components/adminpanel/order/Orders'
+import Services from './components/adminpanel/services/Services';
+import Users from './components/adminpanel/user/Users'
+
+
 
 
 function App() {
@@ -113,14 +117,14 @@ function App() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/forget-password" element={<ForgetPasswordPage />} />
           <Route path="/home" element={<HomePage />} />
-          <Route path="/services" element={<Services />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/login" component={Login} />
           <Route path="/admin" element={<AdminHome />} />
-          
-
+          <Route path="/form" element={<ProductForm />} />
+          <Route path="/orders" element={<Orders />} /> 
+          <Route path="/services" element={<Services />} />
+          <Route path="/users" element={<Users/>} />
         </Routes>
       </div>
     </BrowserRouter>
@@ -128,7 +132,4 @@ function App() {
 }
 
 export default App;
-
-
-
 

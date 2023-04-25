@@ -1,0 +1,44 @@
+/* OrdersPage.css */
+
+.orders-page {
+    padding: 20px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  td:first-child {
+    width: 10%;
+  }
+  
+  td:nth-child(2) {
+    width: 20%;
+  }
+  
+  td:nth-child(3) {
+    width: 30%;
+  }
+  
+  td:nth-child(4) {
+    width: 20%;
+  }
+  
+  td:last-child {
+    width: 20%;
+  }
+  
+  

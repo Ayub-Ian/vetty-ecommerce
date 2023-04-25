@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Cart.css";
 
 function Cart() {
-  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem("cartItems")) || []);
 
-  if (!cartItems || cartItems.length === 0) {
+  if (cartItems.length === 0) {
     return <div>Your cart is empty</div>;
   }
 
   const handleClearCart = () => {
     localStorage.removeItem("cartItems");
-    window.location.reload();
+    setCartItems([]);
+  };
+
+  const handleDecreaseQty = (itemId) => {
+    const updatedCartItems = [...cartItems];
+    const itemIndex = updatedCartItems.findIndex((item) => item.id === itemId);
+
+    if (updatedCartItems[itemIndex].quantity > 1) {
+      updatedCartItems[itemIndex].quantity--;
+      setCartItems(updatedCartItems);
+      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+    }
+  };
+
+  const handleIncreaseQty = (itemId) => {
+    const updatedCartItems = [...cartItems];
+    const itemIndex = updatedCartItems.findIndex((item) => item.id === itemId);
+
+    updatedCartItems[itemIndex].quantity++;
+    setCartItems(updatedCartItems);
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
   };
 
   const getTotalPrice = () => {
@@ -34,9 +54,9 @@ function Cart() {
               <span>${item.price * item.quantity}</span>
             </div>
             <div>
-              <button>-</button>
+              <button onClick={() => handleDecreaseQty(item.id)}>-</button>
               <span>{item.quantity}</span>
-              <button>+</button>
+              <button onClick={() => handleIncreaseQty(item.id)}>+</button>
             </div>
           </div>
         ))}
