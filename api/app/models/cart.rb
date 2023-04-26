@@ -5,3 +5,4 @@ class Cart < ApplicationRecord
     has_many :services, through: :cart_items
 
 end
+g

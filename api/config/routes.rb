@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :services, only: [:index, :show, :create, :update, :destroy]
   resources :products, only: [:index, :show, :create, :update, :destroy]
   resources :users, only: [:index, :show, :create, :update, :destroy]
+  post '/carts', to: 'carts#create'
+  post '/checkout', to: 'carts#checkout'
+  get '/cart', to: 'carts#index'
 
   # ... other routes ...
 
