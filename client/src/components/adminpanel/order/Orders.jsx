@@ -1,30 +1,114 @@
-/*import { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import './Orders.scss'
 
-function Orders() {
+function OrdersPage() {
   const [orders, setOrders] = useState([]);
+
+  const fetchOrders = async () => {
+    const response = await fetch('https://example.com/api/orders');
+    const data = await response.json();
+    setOrders(data);
+  };
+
   useEffect(() => {
-    const fetchOrders = async () => {
-      const res = await axios.get("/orders");
-      setOrders(res.data);
-    };
     fetchOrders();
   }, []);
+
+  const addOrder = (newOrder) => {
+    setOrders([...orders, newOrder]);
+  };
+
+  const deleteOrder = (id) => {
+    const updatedOrders = orders.filter((order) => order.id !== id);
+    setOrders(updatedOrders);
+  };
+
   return (
-    <div className="orders">
-      {orders.map((order) => (
-        <div className="order" key={order._id}>
-          <h3>{order.orderNumber}</h3>
-          <p>{order.status}</p>
-        </div>
-      ))}
+    <div>
+      <h1>Orders</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map((order) => (
+            <tr key={order.id}>
+              <td>{order.id}</td>
+              <td>{order.customer}</td>
+              <td>{order.product}</td>
+              <td>{order.quantity}</td>
+              <td>{order.total}</td>
+              <td>
+                <button onClick={() => deleteOrder(order.id)}>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <AddOrderForm addOrder={addOrder} />
     </div>
   );
 }
 
-export default Orders;*/
+function AddOrderForm(props) {
+  const [id, setId] = useState('');
+  const [customer, setCustomer] = useState('');
+  const [product, setProduct] = useState('');
+  const [quantity, setQuantity] = useState('');
+  const [total, setTotal] = useState('');
 
-import React, { useState } from 'react';
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    props.addOrder({ id, customer, product, quantity, total });
+    setId('');
+    setCustomer('');
+    setProduct('');
+    setQuantity('');
+    setTotal('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Add Order</h2>
+      <label>
+        ID:
+        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
+      </label>
+      <label>
+        Customer:
+        <input type="text" value={customer} onChange={(e) => setCustomer(e.target.value)} />
+      </label>
+      <label>
+        Product:
+        <input type="text" value={product} onChange={(e) => setProduct(e.target.value)} />
+      </label>
+      <label>
+        Quantity:
+        <input type="text" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
+      </label>
+      <label>
+        Total:
+        <input type="text" value={total} onChange={(e) => setTotal(e.target.value)} />
+      </label>
+      <button class="add-button">Add</button>
+
+    </form>
+  );
+}
+
+export default OrdersPage;
+
+
+
+
+/*import React, { useState } from 'react';
 import './Orders.scss'
 
 function OrdersPage() {
@@ -122,7 +206,7 @@ function AddOrderForm(props) {
   )
 }
 
-export default OrdersPage;
+export default OrdersPage;*/
 
 
 
