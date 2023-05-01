@@ -3,11 +3,15 @@ import React from "react";
 import logo from "../../assets/vetty-logo.svg";
 import { ShoppingBagIcon, UserIcon } from "@heroicons/react/24/outline";
 
-
 const Navbar = () => {
   const navigate = useNavigate();
+
+  const isAdmin = () => {
+    return localStorage.getItem("role");
+  };
+
   const handleLogout = async () => {
-    localStorage.clear()
+    localStorage.clear();
     navigate("/login");
   };
 
@@ -16,11 +20,14 @@ const Navbar = () => {
       <div className="navbar--wrapper">
         <img src={logo} alt="vetty logo" />
         <ul>
+          {isAdmin() === "admin" ? (
+            <li>
+              <NavLink to="/admin/products">Admin Panel</NavLink>
+            </li>
+          ) : null}
+
           <li>
             <NavLink to="/home">Home</NavLink>
-          </li>
-          <li>
-            <NavLink to="/about">About us</NavLink>
           </li>
           <li>
             <NavLink to="/services">Services</NavLink>
@@ -35,11 +42,10 @@ const Navbar = () => {
             <p>Account</p>
 
             <div className="account--actions">
-                <Link>View profile</Link>
-                <button onClick={handleLogout}>Logout</button>
+              <button onClick={handleLogout}>Logout</button>
             </div>
           </div>
-          <Link>
+          <Link to="/cart">
             <ShoppingBagIcon className="hero-icon" />
             Cart
           </Link>

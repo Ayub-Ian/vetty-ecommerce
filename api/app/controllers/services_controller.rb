@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-    before_action :authenticate_user
+    # before_action :authenticate_user
   
     # GET /admin/services
     def index
@@ -15,11 +15,11 @@ class ServicesController < ApplicationController
   
     # POST /admin/services
     def create
-      @service = Service.new(service_params)
-      if @service.save
+      @service = Service.create(service_params)
+      if @service.valid?
         render json: @service, status: :created
       else
-        render json: @service.errors, status: :unprocessable_entity
+        render json: @service.errors.full_messages, status: :unprocessable_entity
       end
     end
   
@@ -57,6 +57,6 @@ class ServicesController < ApplicationController
     private
   
     def service_params
-      params.require(:service).permit(:name, :description, :status)
+      params.permit(:name, :description, :price, :status, :image_url)
     end
   end
