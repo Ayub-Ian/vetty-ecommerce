@@ -11,11 +11,19 @@ import ProductDetail from "./components/pages/products/ProductDetails";
 import Products from "./components/pages/products/Products";
 import Cart from "./components/pages/cart/Cart";
 
+// admin imports 
+import AdminProducts from "./components/pages/admin/products/Products";
+import AdminHome from "./components/pages/admin/home/Home";
+import AdminOrders from "./components/pages/admin/orders/Orders";
+import AdminServices from './components/pages/admin/services/Services'
+
+
+
 
 function App() {
   return (
     <BrowserRouter>
-      <div >
+      <div>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -26,6 +34,12 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+
+          {/* admin routes   */}
+          <Route path="admin/products" element={<AdminProducts />} />
+          <Route path="admin/services" element={<AdminServices />} />
+          <Route path="admin/orders" element={<AdminOrders />} />
+          <Route path="admin/home" element={<AdminHome />} />
         </Routes>
       </div>
     </BrowserRouter>

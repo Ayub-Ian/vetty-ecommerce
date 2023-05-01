@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :services, only: [:index, :show, :create, :update, :destroy]
   resources :products, only: [:index, :show, :create, :update, :destroy]
   resources :users, only: [:index, :show, :create, :update, :destroy]
+  resources :carts, only: [:index, :show, :create, :update, :destroy]
 
   # ... other routes ...
 

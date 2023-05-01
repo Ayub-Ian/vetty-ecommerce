@@ -21,6 +21,9 @@ gem 'jwt'
 # Use Pundit for authorization
 gem 'pundit'
 
+# Use carrierwave for file uploads in rails
+gem 'carrierwave'
+
  # Use redis as storage for JWTSession token
 #  gem 'redis'
 

@@ -23,7 +23,7 @@ code {
 
 .container {
   padding-right: 15px;
-  padding-left: 15px;
+  padding-left: 25px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -221,7 +221,7 @@ code {
   grid-auto-rows: minmax(100px, auto);
 }
 
-.home--service {}
+
 .--title{
   font-weight: 500;
   font-size: 22px;
@@ -280,6 +280,128 @@ code {
   width: 20px;
 }
 
+.home--products {
+  margin: 25px 0;
+} 
+
+/* admin table   */
+
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  min-width: 400px;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+.styled-table td img {
+  width: 80px;
+}
+
+/* landing page  */
+
+.landing--header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.landing--container {
+  display: flex;
+}
+
+.landing--cta-text {
+  padding-top: 80px;
+  flex: 1;
+}
+
+.landing--hero {
+  flex: 1;
+}
+.landing--auth {
+  display: flex;
+
+}
+
+.landing--hero img {
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  bottom: 0;
+  right: 0rem;
+}
+
+.landing--wrapper {
+  padding: 22px 64px;
+  min-height: 100dvh;
+  background: #D25239;
+}
+
+.landing--cta {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid #FFC107;
+  color: #FFC107;
+  margin-right: 22px;
+  margin-top: 32px;
+  font-size: 22px;
+  font-weight: 400;
+  transition: all ease 300ms;
+  text-transform: capitalize;
+}
+
+.landing--cta-login {
+  background: #000;
+  border: #000;
+  color: #fff;
+}
+
+.landing--cta:hover {
+  color: #fff;
+  background: #FFC107;
+}
+
+.landing--heading {
+  font-size: 60px;
+  color: #dddddd;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.landing--leading {
+  font-size: 16px;
+  margin-top: 1rem;
+}
 
 /* media queries  */
 @media (min-width: 768px) {
