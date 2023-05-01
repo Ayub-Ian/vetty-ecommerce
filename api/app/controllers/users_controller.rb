@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
-    # before_action :authenticate_user! # Add authentication for user login
+    before_action :authenticate_user
 
     def index
       # You can customize this action based on your application requirements
+      @users = User.all
+      render json: @users, status: :ok
+   
     end
   
     def show
@@ -18,10 +21,11 @@ class UsersController < ApplicationController
     def update
       @user = User.find(params[:id])
   
-      if @user.update(user_params)
-        redirect_to @user, notice: 'User was successfully updated.'
+      if @user
+        @user.update(user_params)
+        render json: { user: @user, message: 'User was successfully updated.'}
       else
-        render :edit
+        render json: { error: "Something wrong happened!"}
       end
     end
   
@@ -33,7 +37,7 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.require(:user).permit(:name, :email, :password) # Update with appropriate user attributes
+      params.require(:user).permit(:name, :email, :password, :role) # Update with appropriate user attributes
     end
   end
 

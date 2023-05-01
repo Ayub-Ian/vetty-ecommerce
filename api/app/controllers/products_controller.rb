@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-    # before_action :authenticate_admin! # Require admin authentication
+    before_action :authenticate_user
   
     # GET /admin/products
     def index
@@ -57,6 +57,6 @@ class ProductsController < ApplicationController
     private
   
     def product_params
-      params.require(:product).permit(:name, :description, :status)
+      params.permit(:name, :description, :price ,:status, :image_url)
     end
   end
