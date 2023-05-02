@@ -16,6 +16,7 @@ import AdminProducts from "./components/pages/admin/products/Products";
 import AdminHome from "./components/pages/admin/home/Home";
 import AdminOrders from "./components/pages/admin/orders/Orders";
 import AdminServices from './components/pages/admin/services/Services'
+import Billing from "./components/pages/billing/Billing";
 
 
 
@@ -34,6 +35,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:productId" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/billing" element={<Billing />} />
 
           {/* admin routes   */}
           <Route path="admin/products" element={<AdminProducts />} />

@@ -403,6 +403,11 @@ code {
   margin-top: 1rem;
 }
 
+.loader {
+ display: flex;
+ align-items: center;
+}
+
 /* media queries  */
 @media (min-width: 768px) {
   .container {

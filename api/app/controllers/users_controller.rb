@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :authenticate_user
+    # before_action :authenticate_user
 
     def index
       # You can customize this action based on your application requirements

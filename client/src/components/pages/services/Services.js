@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
+import client from "../../../utils/network";
 import Navbar from "../../navbar/Navbar";
 import "./service.css";
 
@@ -7,20 +8,26 @@ function Service() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+
+  const getServices = async () => {
+    setLoading(true)
+    try {
+      const res = await client.allServices()
+      setData(res.data)
+    } catch (error) {
+      console.log(error)
+    }
+    setLoading(false)
+  }
+
   useEffect(() => {
     // fetch data from API endpoint
-    fetch("http://127.0.0.1:3000/services")
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
-        console.log(data);
-        setLoading(false);
-      });
+    getServices()
   }, []);
 
-  if (loading) {
-    return <h2>Loading...</h2>;
-  }
+  // if (loading) {
+  //   return <h2>Loading...</h2>;
+  // }
   const handleAddToCart = (product) => {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
     const newCartItem = {
@@ -38,21 +45,23 @@ function Service() {
       <Navbar />
 
       <div className="container">
+        {data.length === 0 ? <h2>Loading...</h2> :(
+          <Fragment>
         <h2 className="--title">All services</h2>
         <div className="service-container">
           {Array.isArray(data) &&
             data.map((service) => (
               <div className="service-item" key={service.id}>
-                <div class="disp-service">
+                <div className="disp-service">
                   <img
-                    class="item-1"
+                    className="item-1"
                     src={service.image_url.url}
                     alt="service img"
                   />
-                  <div class="card-body">
-                    <h5 class="item-2">{service.name}</h5>
-                    <p class="item-3">{service.description}</p>
-                    <p class="item-4">${service.price}</p>
+                  <div className="card-body">
+                    <h5 className="item-2">{service.name}</h5>
+                    <p className="item-3">{service.description}</p>
+                    <p className="item-4">${service.price}</p>
                   </div>
                 </div>
                 <button
@@ -63,7 +72,7 @@ function Service() {
                 </button>
               </div>
             ))}
-        </div>
+        </div></Fragment>)}
       </div>
     </div>
   );
