@@ -21,6 +21,8 @@ export default function HomePage() {
     }
   };
 
+  
+
   useEffect(() => {
     getAllProducts();
   }, []);
@@ -62,9 +64,7 @@ export default function HomePage() {
               products.map((item) => (
                 <ProductCard
                   key={item.id}
-                  image={item.image_url.url}
-                  name={item.name}
-                  amount={item.price} // generating a random amount for demonstration purposes
+                  item={item}
                 />
               ))
             )}

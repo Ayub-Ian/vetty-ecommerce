@@ -25,6 +25,7 @@
   border-radius: 8px;
   border: 1px solid #f44336;
   width: 100%;
+  margin-bottom: 16px;
 }
 
 .cart-item-image {
@@ -86,6 +87,15 @@
   color: #fff;
   border: none;
   padding: 10px 20px;
-  margin-top: 20px;
+  /* margin-top: 20px; */
+  cursor: pointer;
+}
+
+.cart-continue-button {
+
+  color: #f44336;
+  border: none;
+  padding: 10px 20px;
+  /* margin-top: 20px; */
   cursor: pointer;
 }

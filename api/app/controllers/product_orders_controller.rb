@@ -1,5 +1,5 @@
 class ProductOrdersController < ApplicationController
-  before_action :authenticate_user
+  # before_action :authenticate_user
 
   # GET /admin/product_orders
   def index

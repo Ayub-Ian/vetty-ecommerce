@@ -97,13 +97,12 @@ const Cart = () => {
             <button className="cart-checkout-button" onClick={handleCheckout}>
               Checkout
             </button>
+            <Link to="/home" className="cart-continue-button">Continue shopping</Link>
           </div>
         )}
         {/* <button className="check-out">
         <Link to="/Billing" >Checkout</Link><br></br>
       </button>  */}
-
-        {/* <Link to="/home" className="cart-checkout-button">Back to Home</Link> */}
       </div>
     </div>
   );

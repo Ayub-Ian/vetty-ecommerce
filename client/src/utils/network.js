@@ -2,7 +2,7 @@ import axios from 'axios';
 import { getToken } from './auth';
 
 const instance = () => axios.create({
-    baseURL: 'http://localhost:3000',
+    baseURL: 'https://api-vetty-ecommerce.onrender.com',
     timeout: 60000,
     headers: {
         'Content-Type': 'multipart/form-data',
