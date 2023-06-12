@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'FSKitty-Regular';
+    src: local('FSKitty-Regular'),
+         url('./FSKitty-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'FSKitty-Solid';
+    src: local('FSKitty-Solid'),
+         url('./FSKitty-Solid.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'FSKitty-Shadow';
+    src: local('FSKitty-Shadow'),
+         url('./FSKitty-Shadow.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'FSKitty-Headline';
+    src: local('FSKitty-Headline'),
+         url('./FSKitty-Headline.ttf') format('truetype');
+}

@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+@import url("./assets/fonts/font.css");
 
+
+
+:root {
+  --primary-font: 'Rubik', sans-serif;
+  --FSheadline-font: FSKitty-Headline;
+  --secondary-font: FSKitty-Regular;
+  
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Rubik', sans-serif;
+  font-family: var(--primary-font);
   font-size: 16px;
 }
 body {
@@ -329,6 +338,12 @@ code {
 
 /* landing page  */
 
+.landing--logo {
+  font-family: var(--secondary-font);
+  color: #dddddd;
+  font-size: 2em;
+}
+
 .landing--header{
   display: flex;
   align-items: center;
@@ -337,11 +352,18 @@ code {
 
 .landing--container {
   display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  margin-top: 30px;
 }
 
 .landing--cta-text {
-  padding-top: 80px;
+  padding-top: 10px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: centers;
 }
 
 .landing--hero {
@@ -349,40 +371,46 @@ code {
 }
 .landing--auth {
   display: flex;
+  flex-direction: column;
+  width: 100%;
 
 }
 
-.landing--hero img {
-  width: 50%;
-  height: 80%;
-  position: absolute;
-  bottom: 0;
-  right: 0rem;
+.landing--auth a {
+  margin: 0;
+  padding: 0;
 }
+
 
 .landing--wrapper {
   padding: 22px 64px;
   min-height: 100dvh;
-  background: #D25239;
+  background: #41937D;
 }
 
 .landing--cta {
-  padding: 12px 24px;
-  border-radius: 8px;
+  padding: 8px 24px;
+  border-radius: 22px;
   background: transparent;
   border: 1px solid #FFC107;
   color: #FFC107;
-  margin-right: 22px;
-  margin-top: 32px;
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 600;
+  width: 100%;
   transition: all ease 300ms;
   text-transform: capitalize;
 }
 
 .landing--cta-login {
-  background: #000;
-  border: #000;
+  background: #F5CB52;
+  color: #80621D;
+  font-weight: 600;
+  width: 100%;
+}
+
+.landing--text {
+  text-align: center;
+  margin-top: 10px;
   color: #fff;
 }
 
@@ -391,11 +419,21 @@ code {
   background: #FFC107;
 }
 
+.landing--heading-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
 .landing--heading {
-  font-size: 60px;
+  font-size: 3.4em;
   color: #dddddd;
   text-transform: uppercase;
-  width: 100%;
+  font-family: var(--FSheadline-font);
+  /* width: 100%; */
+  letter-spacing: -3px;
+  /* line-height: -2px; */
+  margin: -14px;
 }
 
 .landing--leading {
@@ -412,6 +450,32 @@ code {
 @media (min-width: 768px) {
   .container {
     width: 750px;
+  }
+
+  .landing--container {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .landing--heading-wrapper {
+    align-items: flex-start;
+  }
+  .landing--heading{
+    font-size: 6em;
+  }
+
+  .landing--cta-text{
+    align-items: flex-start;
+  }
+
+  .landing--auth{
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .landing--hero img {
+    width: 100%;
+    
   }
 }
 @media (min-width: 992px) {
